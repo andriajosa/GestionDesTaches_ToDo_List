@@ -1,8 +1,3 @@
-# ============================================
-# Fichier réalisé par : PERSONNE 2 (P2)
-# Rôle : Backend Tâches
-# But : CRUD des tâches, catégories, priorités, statuts, filtres
-# ============================================
 from datetime import datetime
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
@@ -18,7 +13,7 @@ PRIORITES_VALIDES = ("basse", "moyenne", "haute")
 STATUTS_VALIDES = ("a_faire", "en_cours", "termine")
 
 
-# ---------- FONCTIONS UTILITAIRES ----------
+#fonction utilitaire
 def parser_echeance(valeur):
     """Convertit une chaîne 'AAAA-MM-JJ' en date, ou lève ValueError si le format est invalide."""
     if not valeur:
@@ -41,7 +36,7 @@ def dechiffrer_description_ou_defaut(tache):
         return None
 
 
-# ---------- CATEGORIES ----------
+#catégorie
 @tasks_bp.route("/categories", methods=["GET"])
 @jwt_required()
 def liste_categories():
@@ -67,7 +62,7 @@ def creer_categorie():
     return jsonify(categorie.to_dict()), 201
 
 
-# ---------- TACHES ----------
+#taches
 @tasks_bp.route("/tasks", methods=["POST"])
 @jwt_required()
 def creer_tache():
