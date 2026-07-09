@@ -68,7 +68,7 @@ class Taches(db.Model) :
             "titre" : self.titre,
             "description" : description_claire if description_claire else self.description,
             "priority" : self.priority, 
-            "statut" : self.status, 
+            "statut" : self.statut, 
             "due_date" : self.due_date.isoformat() if self.due_date else None, #convertit l'objet de type date en chaîne de caractères
             "categorie_id" : self.categorie_id,
             "created_by" : self.created_by,
@@ -86,7 +86,7 @@ class Historique(db.Model):
 
     def to_dict(self):
         return {
-            "id": self.id,
+            "id_historique": self.id_historique,
             "user_id": self.user_id,
             "action": self.action,
             "timestamp": self.timestamp.isoformat() if self.timestamp else None
