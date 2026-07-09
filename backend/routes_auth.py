@@ -8,7 +8,7 @@ from decorators import role_required, log_activity
 #un blueprint regroupe un ensemble de routes
 auth_bp = Blueprint("auth", __name__)
 
-@auth_bp.route("/register", method = ["POST"])
+@auth_bp.route("/register", methods=["POST"])
 def register() : 
     #récupère les données envoyées par Tkinter
     data = request.get_json()
