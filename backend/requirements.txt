@@ -1,0 +1,10 @@
+flask
+flask-sqlalchemy
+flask-jwt-extended
+bcrypt
+cryptography
+pandas
+python-dotenv
+pymysql
+requests
+openpyxl
