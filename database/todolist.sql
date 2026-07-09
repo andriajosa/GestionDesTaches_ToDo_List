@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 08 juil. 2026 à 13:22
+-- Généré le : jeu. 09 juil. 2026 à 09:13
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `categories` (
 --
 
 CREATE TABLE `historique` (
-  `id` int(11) NOT NULL,
+  `id_historique` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `action` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
@@ -95,7 +95,7 @@ ALTER TABLE `categories`
 -- Index pour la table `historique`
 --
 ALTER TABLE `historique`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_historique`),
   ADD KEY `user_id` (`user_id`);
 
 --
@@ -128,7 +128,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `historique`
 --
 ALTER TABLE `historique`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_historique` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `taches`
